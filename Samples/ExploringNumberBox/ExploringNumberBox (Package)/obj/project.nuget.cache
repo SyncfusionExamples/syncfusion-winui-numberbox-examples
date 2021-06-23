@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "SE/0lGb1hYSy9zPS23j626pvy1UusuPQ0LhwxodC27Q7J57IRQHZ+t3XtH93LhRoBWIljoVj4FITVcqGvcmuHw==",
+  "success": true,
+  "projectFilePath": "D:\\Blog\\Sample\\ExploringNumberBox\\ExploringNumberBox (Package)\\ExploringNumberBox (Package).wapproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PrabakaranSangameswa\\.nuget\\packages\\microsoft.projectreunion\\0.5.7\\microsoft.projectreunion.0.5.7.nupkg.sha512",
+    "C:\\Users\\PrabakaranSangameswa\\.nuget\\packages\\microsoft.projectreunion.dwrite\\0.5.7\\microsoft.projectreunion.dwrite.0.5.7.nupkg.sha512",
+    "C:\\Users\\PrabakaranSangameswa\\.nuget\\packages\\microsoft.projectreunion.foundation\\0.5.7\\microsoft.projectreunion.foundation.0.5.7.nupkg.sha512",
+    "C:\\Users\\PrabakaranSangameswa\\.nuget\\packages\\microsoft.projectreunion.winui\\0.5.7\\microsoft.projectreunion.winui.0.5.7.nupkg.sha512"
+  ],
+  "logs": []
+}
