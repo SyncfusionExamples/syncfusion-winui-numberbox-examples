@@ -26,6 +26,7 @@ namespace ExploringNumberBox
         public MainWindow()
         {
             this.InitializeComponent();
+            this.Title = "Introducing new Number Box control for WinUI";
         }
     }
 }
