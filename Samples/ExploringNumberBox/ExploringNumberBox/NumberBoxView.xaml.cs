@@ -19,14 +19,13 @@ using Windows.Foundation.Collections;
 namespace ExploringNumberBox
 {
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainWindow : Window
+    public sealed partial class NumberBoxView : Page
     {
-        public MainWindow()
+        public NumberBoxView()
         {
             this.InitializeComponent();
-            this.Title = "Introducing new Number Box control for WinUI";
         }
     }
 }

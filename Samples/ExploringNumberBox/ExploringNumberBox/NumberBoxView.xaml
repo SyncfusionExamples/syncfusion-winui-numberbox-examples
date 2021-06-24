@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="ExploringNumberBox.NumberBoxView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExploringNumberBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top">
+        <editors:SfTimePicker 
+            Name="sfTimePicker"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            Margin="0,100,0,0"/>
+    </StackPanel>
+</Page>
