@@ -31,17 +31,17 @@
   </ItemGroup>
   <PropertyGroup>
     <WapProjPath Condition="'$(WapProjPath)'==''">$(MSBuildExtensionsPath)\Microsoft\DesktopBridge\</WapProjPath>
-    <PathToXAMLWinRTImplementations>ExploringNumberBox\</PathToXAMLWinRTImplementations>
+    <PathToXAMLWinRTImplementations>ExploringNumberBox.winui_net50\</PathToXAMLWinRTImplementations>
     <AssetTargetFallback>net5.0-windows$(TargetPlatformVersion);$(AssetTargetFallback)</AssetTargetFallback>
   </PropertyGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
-    <ProjectGuid>b9687057-ddce-4a80-8d91-6b2acf68aee9</ProjectGuid>
+    <ProjectGuid>b5e834fc-97fa-4f2f-a33c-4364f8c37171</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
-    <EntryPointProjectUniqueName>..\ExploringNumberBox\ExploringNumberBox.csproj</EntryPointProjectUniqueName>
+    <EntryPointProjectUniqueName>..\ExploringNumberBox.winui_net50\ExploringNumberBox.winui_net50.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -58,7 +58,7 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExploringNumberBox\ExploringNumberBox.csproj">
+    <ProjectReference Include="..\ExploringNumberBox.winui_net50\ExploringNumberBox.winui_net50.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
       <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     </ProjectReference>
