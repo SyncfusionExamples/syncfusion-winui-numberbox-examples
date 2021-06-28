@@ -36,6 +36,9 @@ namespace ExploringNumberBox
             Thread.CurrentThread.CurrentCulture = ci;
             Thread.CurrentThread.CurrentUICulture = ci;
 
+            string currencyIdentifiers = new RegionInfo(ci.LCID).ISOCurrencySymbol;
+            string currencySymbol = ci.NumberFormat.CurrencySymbol;
+
             //NumberFormatter
             pageNumberBox1.NumberFormatter = new DecimalFormatter()
             {                
@@ -45,7 +48,7 @@ namespace ExploringNumberBox
                     RoundingAlgorithm= RoundingAlgorithm.RoundDown 
                 }
             };
-            priceNumberBox1.NumberFormatter = new CurrencyFormatter("USD")
+            priceNumberBox1.NumberFormatter = new CurrencyFormatter(currencyIdentifiers)
             {
                 FractionDigits = 3,
                 NumberRounder = new IncrementNumberRounder() { Increment = 0.0001 }
@@ -59,7 +62,7 @@ namespace ExploringNumberBox
 
             //CustomFormat
             pageNumberBox2.CustomFormat = "#";
-            priceNumberBox2.CustomFormat = "$#0.000#";
+            priceNumberBox2.CustomFormat = currencySymbol + "#0.000#";
             courseNumberBox2.CustomFormat = "#000.00%";
         }
     }
