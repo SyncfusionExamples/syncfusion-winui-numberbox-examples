@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="GettingStarted.GettingStartedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GettingStarted"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:editor="using:Syncfusion.UI.Xaml.Editors"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <editor:SfNumberBox HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            Value="300" Width="200"
+                            ValueChanged="sfNumberBox_ValueChanged"
+                            x:Name="sfNumberBox"
+                            CustomFormat="C3"
+                            />
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center">
+            <TextBox Header="CustomFormat" Width="200" HorizontalAlignment="Left" Margin="5"
+                     Text="{x:Bind sfNumberBox.CustomFormat, Mode=TwoWay}" />
+            <Button HorizontalAlignment="Left" Margin="5" Width="200" Content="Set NumberFormatter" 
+                        Click="Button_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5" >
+                <TextBlock VerticalAlignment="Center"
+                           HorizontalAlignment="Left" Margin="5"
+                           Width="100" Text="AllowNull" />
+                <CheckBox Height="30" IsChecked="{x:Bind sfNumberBox.AllowNull, Mode=TwoWay}" />
+            </StackPanel>
+            <TextBox Header="Watermark" Width="200"
+                     HorizontalAlignment="Left" Margin="5"
+                     Text="{x:Bind sfNumberBox.PlaceholderText, Mode=TwoWay}" />
+        </StackPanel>
+    </Grid>
+
+</Page>
