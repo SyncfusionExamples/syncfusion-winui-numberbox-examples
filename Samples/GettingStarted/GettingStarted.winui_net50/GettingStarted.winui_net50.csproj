@@ -13,7 +13,20 @@
     <DefineConstants>WinUI_Desktop</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Assets\**" />
+    <Content Remove="Assets\**" />
+    <EmbeddedResource Remove="Assets\**" />
+    <None Remove="Assets\**" />
+    <Page Remove="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="GettingStarted.winui_TemporaryKey.pfx" />
     <None Remove="GettingStartedView.xaml" />
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
   </ItemGroup>
 
   <ItemGroup>
