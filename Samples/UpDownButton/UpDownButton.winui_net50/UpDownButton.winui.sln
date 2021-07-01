@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31410.414
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpDownButton.winui", "UpDownButton.winui.csproj", "{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|arm64 = Debug|arm64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|arm64 = Release|arm64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|arm64.ActiveCfg = Debug|arm64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|arm64.Build.0 = Debug|arm64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|arm64.Deploy.0 = Debug|arm64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|x64.ActiveCfg = Debug|x64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|x64.Build.0 = Debug|x64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|x64.Deploy.0 = Debug|x64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|x86.ActiveCfg = Debug|Win32
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|x86.Build.0 = Debug|Win32
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Debug|x86.Deploy.0 = Debug|Win32
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|arm64.ActiveCfg = Release|arm64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|arm64.Build.0 = Release|arm64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|arm64.Deploy.0 = Release|arm64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|x64.ActiveCfg = Release|x64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|x64.Build.0 = Release|x64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|x64.Deploy.0 = Release|x64
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|x86.ActiveCfg = Release|Win32
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|x86.Build.0 = Release|Win32
+		{8654B50D-72DF-46B3-9578-6CDA0DD8B4A8}.Release|x86.Deploy.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42AB26BD-3F27-4A4E-BA81-6C910E58C297}
+	EndGlobalSection
+EndGlobal

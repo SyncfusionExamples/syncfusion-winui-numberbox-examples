@@ -13,7 +13,13 @@
     <DefineConstants>WinUI_Desktop</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Formatting.winui_TemporaryKey.pfx" />
     <None Remove="FormattingView.xaml" />
+    <None Remove="Package.appxmanifest" />
+    <None Remove="Properties\Default.rd.xml" />
   </ItemGroup>
 
   <ItemGroup>
