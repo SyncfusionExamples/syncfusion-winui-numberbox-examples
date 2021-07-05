@@ -6,222 +6,232 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:editors="using:Syncfusion.UI.Xaml.Editors"
-    xmlns:enumextension="using:syncfusion.demoscommon.winui"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
-    <Grid
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
 
-        <Grid 
-            BorderBrush="Black" 
-            BorderThickness="1,1,1,0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.DataContext>
-                <local:NumberBoxViewModel/>
-            </Grid.DataContext>
-            <StackPanel
-                IsTabStop="True"
-                Margin="50" 
-                Grid.Column="0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-                <TextBlock
-                    Text="Fahrenheit (°F)"
-                    Margin="0,0,0,4"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
-                <editors:SfNumberBox
-                    x:Name="fahrenheitNumberBox"
-                    Width="240"
+        <TextBlock 
+            Margin="10" 
+            Grid.Row="0" 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center" 
+            Text="WinUI Number Box"/>
+
+        <TabView 
+            Grid.Row="1" 
+            IsAddTabButtonVisible="False">
+            <TabViewItem 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Header="Basic Features"  
+                IsClosable="False">
+                <Grid 
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.DataContext>
+                        <local:NumberBoxViewModel/>
+                    </Grid.DataContext>
+                    <StackPanel
+                        IsTabStop="True"
+                        Margin="50" 
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Text="Fahrenheit (°F)"
+                            Margin="0,0,0,4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center" />
+                        <editors:SfNumberBox
+                            x:Name="fahrenheitNumberBox"
+                            Width="240"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            CustomFormat="#0.00°F"
+                            Value="{Binding FahrenheitValue, Mode=TwoWay}"
+                            AllowNull="{Binding AllowNull, Mode=TwoWay}"
+                            PlaceholderText="{Binding PlaceholderText, Mode=TwoWay,
+                                                      UpdateSourceTrigger=PropertyChanged}"
+                            Minimum="{Binding Minimum, Mode=TwoWay}"
+                            Maximum="{Binding Maximum, Mode=TwoWay}"
+                            SmallChange="{Binding SmallChange, Mode=TwoWay}"
+                            LargeChange="{Binding LargeChange, Mode=TwoWay}"
+                            UpDownPlacementMode="{Binding UpDownPlacementMode, Mode=TwoWay}"
+                            IsEditable="{Binding IsEditable, Mode=TwoWay}"/>
+                    </StackPanel>
+                    
+                    <StackPanel
+                        Margin="10" 
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <StackPanel>
+                            <CheckBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Content="IsEditable"
+                                IsChecked="{Binding IsEditable, Mode=TwoWay}"/>
+                            <CheckBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Content="AllowNull"
+                                IsChecked="{Binding AllowNull, Mode=TwoWay}"/>
+                            <TextBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Header="PlaceholderText"
+                                IsEnabled="{Binding AllowNull, Mode=TwoWay}"
+                                Text="{Binding PlaceholderText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <NumberBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Header="Minimum"
+                                Value="{Binding Minimum, Mode=TwoWay}"/>
+                            <NumberBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Header="Maximum"
+                                Value="{Binding Maximum, Mode=TwoWay}"/>
+                            <NumberBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Header="SmallChange"
+                                Minimum="1"
+                                Value="{Binding SmallChange, Mode=TwoWay}"/>
+                            <NumberBox
+                                Margin="5"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Header="LargeChange"
+                                Minimum="1"
+                                Value="{Binding LargeChange, Mode=TwoWay}"/>
+                            <ComboBox
+                                Margin="5,5,5,20"
+                                Width="180"
+                                HorizontalAlignment="Left"
+                                Header="UpDownPlacementMode"
+                                SelectedItem="{Binding Converter={local:StringToEnumValueConverter Type=editors:NumberBoxUpDownPlacementMode}, Path=UpDownPlacementMode, Mode=TwoWay}"
+                                ItemsSource="{local:EnumToStringValuesExtension Type=editors:NumberBoxUpDownPlacementMode}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabViewItem>
+            <TabViewItem 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Header="Formatting"
+                IsClosable="False">
+                <Grid
+                    Margin="100"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    CustomFormat="#0.00°F"
-                    Value="{Binding FahrenheitValue, Mode=TwoWay}"
-                    AllowNull="{Binding AllowNull, Mode=TwoWay}"
-                    PlaceholderText="{Binding PlaceholderText, Mode=TwoWay, 
-                                              UpdateSourceTrigger=PropertyChanged}"
-                    Minimum="{Binding Minimum, Mode=TwoWay}"
-                    Maximum="{Binding Maximum, Mode=TwoWay}"
-                    SmallChange="{Binding SmallChange, Mode=TwoWay}"
-                    LargeChange="{Binding LargeChange, Mode=TwoWay}"
-                    UpDownPlacementMode="{Binding UpDownPlacementMode, Mode=TwoWay}"
-                    IsEditable="{Binding IsEditable, Mode=TwoWay}"/>
-            </StackPanel>
+                    x:DefaultBindMode="TwoWay">
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                        <Style TargetType="editors:SfNumberBox">
+                            <Setter Property="Margin" Value="10"/>
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Margin" Value="10"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.DataContext>
+                        <local:NumberBoxViewModel 
+                            CourseName="NumberFormatter"
+                            NumberOfPages="320"
+                            Price="78"
+                            CourseCompletion="45.35"/>
+                    </Grid.DataContext>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="1" 
+                        Grid.Column="0"
+                        Text="Number of pages"/>
+                    <TextBlock 
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Text="Price"/>
+                    <TextBlock 
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="Course completion"/>
+                    
+                    <!--NumberFormatter-->
+                    <TextBlock 
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                        Text="NumberFormatter"/>
+                    <editors:SfNumberBox 
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Name="pageNumberBox1"
+                        Value="{Binding NumberOfPages}"/>
+                    <editors:SfNumberBox 
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Name="priceNumberBox1"
+                        Value="{Binding Price}"/>
+                    <editors:SfNumberBox 
+                        Grid.Row="3"
+                        Grid.Column="1" 
+                        Name="courseNumberBox1"
+                        Value="{Binding CourseCompletion}"
+                        Margin="10,10,10,20" />
 
-            <StackPanel 
-                Grid.Column="1" 
-                Orientation="Horizontal">
-                <StackPanel>
-                    <CheckBox
-                        Margin="5"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Content="AllowNull"
-                        IsChecked="{Binding AllowNull, Mode=TwoWay}"/>
-                    <TextBox
-                        Margin="5"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Header="PlaceholderText"
-                        IsEnabled="{Binding AllowNull, Mode=TwoWay}"
-                        Text="{Binding PlaceholderText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <NumberBox
-                        Margin="5"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Header="Minimum"
-                        Value="{Binding Minimum, Mode=TwoWay}"/>
-                    <NumberBox
-                        Margin="5,5,5,20"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Header="Maximum"
-                        Value="{Binding Maximum, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel>
-                    <CheckBox
-                        Margin="5"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Content="IsEditable"
-                        IsChecked="{Binding IsEditable, Mode=TwoWay}"/>
-                    <NumberBox
-                        Margin="5"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Header="SmallChange"
-                        Minimum="1"
-                        Value="{Binding SmallChange, Mode=TwoWay}"/>
-                    <NumberBox
-                        Margin="5"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Header="LargeChange"
-                        Minimum="1"
-                        Value="{Binding LargeChange, Mode=TwoWay}"/>
-                    <ComboBox
-                        Margin="5,5,5,20"
-                        Width="180"
-                        HorizontalAlignment="Left"
-                        Header="UpDownPlacementMode"
-                        SelectedItem="{Binding Converter={local:StringToEnumValueConverter Type=editors:NumberBoxUpDownPlacementMode}, Path=UpDownPlacementMode, Mode=TwoWay}"
-                        ItemsSource="{local:EnumToStringValuesExtension Type=editors:NumberBoxUpDownPlacementMode}"/>
-                </StackPanel>
-            </StackPanel>
-        </Grid>
-
-        <Grid
-            BorderBrush="Black" 
-            BorderThickness="1" 
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            Grid.Row="1"
-            Grid.Column="0"
-            x:DefaultBindMode="TwoWay">
-            <Grid.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Margin" Value="10"/>
-                    <Setter Property="HorizontalAlignment" Value="Left"/>
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                </Style>
-                <Style TargetType="editors:SfNumberBox">
-                    <Setter Property="Margin" Value="10"/>
-                </Style>
-                <Style TargetType="TextBox">
-                    <Setter Property="Margin" Value="10"/>
-                </Style>
-            </Grid.Resources>
-            <Grid.DataContext>
-                <local:NumberBoxViewModel 
-                    CourseName="NumberFormatter"
-                    NumberOfPages="320"
-                    Price="78"
-                    CourseCompletion="45.35"/>
-            </Grid.DataContext>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="300"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock
-                Grid.Row="1" 
-                Grid.Column="0" 
-                Text="Number of pages"/>
-            <TextBlock 
-                Grid.Row="2"
-                Grid.Column="0"
-                Text="Price"/>
-            <TextBlock 
-                Grid.Row="3"
-                Grid.Column="0" 
-                Text="Course completion"/>
-
-            <!--NumberFormatter-->
-            <TextBlock 
-                Grid.Row="0" 
-                Grid.Column="1"
-                Text="NumberFormatter"/>
-            <editors:SfNumberBox 
-                Grid.Row="1"
-                Grid.Column="1"
-                Name="pageNumberBox1"
-                Value="{Binding NumberOfPages}"/>
-            <editors:SfNumberBox 
-                Grid.Row="2"
-                Grid.Column="1"
-                Name="priceNumberBox1"
-                Value="{Binding Price}"/>
-            <editors:SfNumberBox 
-                Grid.Row="3"
-                Grid.Column="1" 
-                Name="courseNumberBox1"
-                Value="{Binding CourseCompletion}"
-                Margin="10,10,10,20" />
-
-            <!--CustomFormat-->
-            <TextBlock 
-                Grid.Row="0"
-                Grid.Column="2"
-                Text="CustomFormat"/>
-            <editors:SfNumberBox
-                Grid.Row="1" 
-                Grid.Column="2"
-                Name="pageNumberBox2"
-                Value="{Binding NumberOfPages}"/>
-            <editors:SfNumberBox 
-                Grid.Row="2"
-                Grid.Column="2"
-                Name="priceNumberBox2"
-                Value="{Binding Price}"/>
-            <editors:SfNumberBox
-                Grid.Row="3" 
-                Grid.Column="2"
-                Name="courseNumberBox2"
-                Value="{Binding CourseCompletion}"
-                Margin="10,10,10,20" />
-        </Grid>
+                    <!--CustomFormat-->
+                    <TextBlock 
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Text="CustomFormat"/>
+                    <editors:SfNumberBox
+                        Grid.Row="1" 
+                        Grid.Column="2"
+                        Name="pageNumberBox2"
+                        Value="{Binding NumberOfPages}"/>
+                    <editors:SfNumberBox 
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Name="priceNumberBox2"
+                        Value="{Binding Price}"/>
+                    <editors:SfNumberBox
+                        Grid.Row="3" 
+                        Grid.Column="2"
+                        Name="courseNumberBox2"
+                        Value="{Binding CourseCompletion}"
+                        Margin="10,10,10,20" />
+                </Grid>
+            </TabViewItem>
+        </TabView>
     </Grid>
 </Page>
